@@ -32,7 +32,7 @@ public class AddressUtility {
     }
 
     /**
-     * This method can replace adresses startet to www. on domain address URL
+     * This method can replace addresses started to www. on domain address URL
      *
      * @param String address
      * @return String

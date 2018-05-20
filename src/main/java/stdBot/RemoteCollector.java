@@ -1,5 +1,8 @@
 package stdBot;
 
+/**
+ * This abstract class extends Thread 
+ */
 public abstract class RemoteCollector extends Thread {
 
     static protected MapsFactory factory = new MapsFactory();

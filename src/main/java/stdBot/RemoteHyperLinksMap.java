@@ -1,5 +1,8 @@
 package stdBot;
 
+/**
+ * This class implements CollectableRemotely interface
+ */
 public class RemoteHyperLinksMap implements CollectableRemotely{
     @Override
     public void setEntryPoint(String address) {

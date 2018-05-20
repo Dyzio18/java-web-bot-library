@@ -6,5 +6,4 @@ public interface CollectableRemotely {
     SiteMap getMap();
     boolean hasFinished();
     void setMaxRecursionLevel(int level);
-
 }
