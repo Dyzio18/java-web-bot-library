@@ -37,6 +37,7 @@ public class SiteMap {
 
     /**
      * @return String This returns is literally all data extracted from assigned starting url
+     *         in the form of the URL
      */
     public String toHTML() {
         StringBuilder stringBuilder = new StringBuilder();
@@ -50,7 +51,6 @@ public class SiteMap {
             stringBuilder.append("<li><a href=\"" + relation.getKey() + "\">" + relation.getKey() + "</a> --> <a href=\"" + relation.getValue() + "\">" + relation.getValue() + "</a></li>");
 
         return stringBuilder.toString();
-
     }
 
     /**

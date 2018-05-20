@@ -9,7 +9,7 @@ public class AddressUtility {
      * This method check and return true if address is correct HTTP URL
      * in other cases return false
      *
-     * @param String address
+     * @param  address String
      * @return boolean
      */
     static public boolean isHttp(String address) {
@@ -24,7 +24,7 @@ public class AddressUtility {
     /**
      * This method check internal references for address
      *
-     * @param String address
+     * @param  address String
      * @return boolean
      */
     static public boolean isInternalRef(String address) {
@@ -34,7 +34,7 @@ public class AddressUtility {
     /**
      * This method can replace addresses started to www. on domain address URL
      *
-     * @param String address
+     * @param  address String
      * @return String
      */
     static public String clearHttpAddress(String address) {
