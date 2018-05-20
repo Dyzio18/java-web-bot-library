@@ -13,18 +13,17 @@ import java.util.Set;
 
 public class SiteMap {
     /**
-     *  This field is set of every localized html link (url) under assigned starting url with selected level of recursion
+     * This field is set of every localized html link (url) under assigned starting url with selected level of recursion
      */
     public Set<String> knownInternalLinks = new HashSet<>();
 
     /**
-     *  This field is set of every localized html route (in form of relation)
+     * This field is set of every localized html route (in form of relation)
      */
     public Set<Pair<String, String>> knownRelations = new HashSet<>();
 
     /**
      * This methods prints every value stored in class fields with adequate header
-     *
      */
     public void print() {
         System.out.println("Known links:");
@@ -37,7 +36,6 @@ public class SiteMap {
     }
 
     /**
-     *
      * @return String This returns is literally all data extracted from assigned starting url
      */
     public String toHTML() {
@@ -106,7 +104,7 @@ public class SiteMap {
         System.out.println(relation.getKey());
         for (Pair<String, String> rel : knownRelations) {
             if (relation.getKey().equals(rel.getKey())) {
-                for(int i = 0; i < level; i++) {
+                for (int i = 0; i < level; i++) {
                     System.out.print("\t -> ");
                 }
                 System.out.println(rel.getValue());

@@ -1,7 +1,9 @@
 package stdBot;
 
 /**
- * This abstract class extends Thread 
+ * This abstract class extends Thread
+ * This represents composition of classes MapsFactory, CollectableRemotely, RemoteHandler
+ * This class collects data
  */
 public abstract class RemoteCollector extends Thread {
 
@@ -11,14 +13,14 @@ public abstract class RemoteCollector extends Thread {
     private RemoteHandler handler;
     protected int maxRecursionLevel;
 
-    public RemoteCollector(RemoteHandler handler, String address, int maxRecursionLevel){
+    public RemoteCollector(RemoteHandler handler, String address, int maxRecursionLevel) {
         this.handler = handler;
         this.address = address;
         this.maxRecursionLevel = maxRecursionLevel;
     }
 
     @Override
-    public void run(){
+    public void run() {
         collectableRemotely.setEntryPoint(address);
         collectableRemotely.setMaxRecursionLevel(maxRecursionLevel);
 
@@ -26,7 +28,7 @@ public abstract class RemoteCollector extends Thread {
             collectableRemotely.collectOne(handler);
     }
 
-    public SiteMap collectAll(){
+    public SiteMap collectAll() {
         try {
             join();
         } catch (InterruptedException e) {

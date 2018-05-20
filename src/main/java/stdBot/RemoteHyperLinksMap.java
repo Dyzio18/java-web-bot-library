@@ -3,7 +3,7 @@ package stdBot;
 /**
  * This class implements CollectableRemotely interface
  */
-public class RemoteHyperLinksMap implements CollectableRemotely{
+public class RemoteHyperLinksMap implements CollectableRemotely {
     @Override
     public void setEntryPoint(String address) {
 
@@ -11,7 +11,6 @@ public class RemoteHyperLinksMap implements CollectableRemotely{
 
     @Override
     public void collectOne(RemoteHandler handler) {
-
     }
 
     @Override
@@ -26,6 +25,5 @@ public class RemoteHyperLinksMap implements CollectableRemotely{
 
     @Override
     public void setMaxRecursionLevel(int level) {
-
     }
 }

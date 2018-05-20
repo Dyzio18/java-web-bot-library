@@ -11,6 +11,9 @@ import java.net.URLConnection;
  */
 public class HttpRemoteHandler implements RemoteHandler {
 
+    /**
+     * This filed is URL address in a form of string
+     */
     private String address = "";
     private Boolean addressHasChanged = false;
     private URL _url = null;
@@ -33,6 +36,10 @@ public class HttpRemoteHandler implements RemoteHandler {
         }
     }
 
+    /**
+     * This method connects to the website under assigned address in class field (url) - address
+     * @throws IOException
+     */
     private void connect() throws IOException {
         _url = new URL(address);
         URLConnection connection = _url.openConnection();

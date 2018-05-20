@@ -9,7 +9,12 @@ public class RemoteMapper {
     private RemoteCollector collector;
     private RemoteHandler handler;
 
-    public void start(String address, CollectorTypeEnum collectorTypeEnum, int maxRecursionLevel){
+    /**
+     * @param address           This parameter is website address (url) in the form of string
+     * @param collectorTypeEnum This parameter is type of object for factory in the form of enum
+     * @param maxRecursionLevel This parameter describes the maximum search depth in the form integer
+     */
+    public void start(String address, CollectorTypeEnum collectorTypeEnum, int maxRecursionLevel) {
         handler = remoteHandlersFactory.create(address);
         collector = collectorsFactory.create(collectorTypeEnum, handler, address, maxRecursionLevel);
         collector.start();
@@ -18,7 +23,7 @@ public class RemoteMapper {
     /**
      * @return SiteMap This returns the collected result of scanning site under url assigned at the beginning
      */
-    public SiteMap getResult(){
+    public SiteMap getResult() {
         return collector.collectAll();
     }
 

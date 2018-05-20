@@ -1,6 +1,7 @@
 package stdBot;
 
 import javafx.util.Pair;
+
 import java.util.ArrayDeque;
 import java.util.Queue;
 import java.util.regex.Matcher;
@@ -25,6 +26,11 @@ public class RemoteSiteMap implements CollectableRemotely {
         domain = AddressUtility.clearHttpAddress(address);
     }
 
+    /**
+     * This method is inherited from interface CollectableRemotely
+     *
+     * @param handler This parameter is used handler
+     */
     @Override
     public void collectOne(RemoteHandler handler) {
         String address = getNextAddress();
@@ -34,7 +40,7 @@ public class RemoteSiteMap implements CollectableRemotely {
         StringBuilder siteContent = new StringBuilder();
         String line;
 
-        while ((line = handler.getLine()) != null){
+        while ((line = handler.getLine()) != null) {
             siteContent.append(line);
         }
 
@@ -46,13 +52,13 @@ public class RemoteSiteMap implements CollectableRemotely {
             newLink = matcher.group().substring(6);
             newLink = newLink.replaceAll("\"", "");
 
-            if (AddressUtility.isInternalRef(newLink)){
+            if (AddressUtility.isInternalRef(newLink)) {
                 newLink = domain + "/" + newLink;
                 newLink = newLink.replaceAll("/+", "/");
                 newLink = AddressUtility.getScheme(address) + "://" + newLink;
             }
 
-            if (newLink.contains(domain) && !siteMap.knownInternalLinks.contains(newLink)){
+            if (newLink.contains(domain) && !siteMap.knownInternalLinks.contains(newLink)) {
                 siteMap.knownInternalLinks.add(newLink);
                 siteMap.knownRelations.add(new Pair<>(address, newLink));
                 nextLinks.add(newLink);
@@ -62,6 +68,7 @@ public class RemoteSiteMap implements CollectableRemotely {
 
     /**
      * This method is inherited from interface CollectableRemotely and it returns result of search
+     *
      * @return SiteMap This returns the result of page search in the form of SiteMap class object.
      */
     @Override
@@ -71,6 +78,7 @@ public class RemoteSiteMap implements CollectableRemotely {
 
     /**
      * This method is inherited from interface CollectableRemotely and it indicates the end of page in-depth search
+     *
      * @return boolean This returns the boolean which indicated the end of page search
      */
     @Override
@@ -80,6 +88,7 @@ public class RemoteSiteMap implements CollectableRemotely {
 
     /**
      * This method is inherited from interface CollectableRemotely and it sets the recursion level of site searching
+     *
      * @param level This parameter is integer which sets the maximum depth of website search
      */
     @Override
@@ -89,19 +98,21 @@ public class RemoteSiteMap implements CollectableRemotely {
 
     /**
      * This method enter the site under assigned address passed in certain parameter
+     *
      * @param handler This parameter is used handler
      * @param address This parameter is site address (url)
      */
-    private void enterSite(RemoteHandler handler, String address){
+    private void enterSite(RemoteHandler handler, String address) {
         handler.setAddress(address);
     }
 
     /**
      * This method move along queue of currentLinks Queue (in default state returns currentLinks Queue head)
+     *
      * @return String This returns currentLinks Queue head
      */
-    private String getNextAddress(){
-        if (currentLinks.isEmpty()){
+    private String getNextAddress() {
+        if (currentLinks.isEmpty()) {
             currentLinks = nextLinks;
             nextLinks = new ArrayDeque<>();
             currentRecursionLevel++;

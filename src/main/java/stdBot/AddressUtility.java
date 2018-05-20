@@ -12,7 +12,7 @@ public class AddressUtility {
      * @param String address
      * @return boolean
      */
-    static public boolean isHttp(String address){
+    static public boolean isHttp(String address) {
         try {
             new URI(address);
             return true;
@@ -27,7 +27,7 @@ public class AddressUtility {
      * @param String address
      * @return boolean
      */
-    static public boolean isInternalRef(String address){
+    static public boolean isInternalRef(String address) {
         return !address.contains(".");
     }
 
@@ -37,7 +37,7 @@ public class AddressUtility {
      * @param String address
      * @return String
      */
-    static public String clearHttpAddress(String address){
+    static public String clearHttpAddress(String address) {
         try {
             URI uri = new URI(address);
             String domain = uri.getHost();
@@ -50,10 +50,10 @@ public class AddressUtility {
     /**
      * This method return correct Uniform Resource Identifier (URI) address or null as exception
      *
-     * @param String address
+     * @param address
      * @return String
      */
-    static public String getScheme(String address){
+    static public String getScheme(String address) {
         try {
             URI uri = new URI(address);
             return uri.getScheme();
