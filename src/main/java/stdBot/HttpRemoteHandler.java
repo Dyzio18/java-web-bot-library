@@ -6,6 +6,9 @@ import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
 
+/**
+ * This class allows to connect with remote server
+ */
 public class HttpRemoteHandler implements RemoteHandler {
 
     private String address = "";
