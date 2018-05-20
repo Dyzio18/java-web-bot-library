@@ -2,6 +2,9 @@
 An experimental, compact, universal Java API which allows 
 you to create your own web-bot.
 
+##### Presentation of technology
+[Presentation](https://patryk-nizio.pl/files/work/projects/java-web-bot-library/prezentacja.pdf)
+
 
 ## Getting started
 ##### WARNING! This project is still highly experimental and many aspects of it are subject to breaking changes, continue at your own risk.
@@ -13,6 +16,7 @@ Used algorithms allows to use different web-search depth adequate to user needs.
 
 ## Example of extracted data
 ![Alt text](/img/demo-interface-prezentation.png)
+
 ## Example of usage with user interface
 ![Alt text](/img/demo-extracted-data.png)
 
