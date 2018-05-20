@@ -6,9 +6,9 @@ public class RemoteMapper {
     private RemoteCollector collector;
     private RemoteHandler handler;
 
-    public void start(String address, CollectorTypeEnum collectorTypeEnum, int maxRecurtionLevel){
+    public void start(String address, CollectorTypeEnum collectorTypeEnum, int maxRecursionLevel){
         handler = remoteHandlersFactory.create(address);
-        collector = collectorsFactory.create(collectorTypeEnum, handler, address, maxRecurtionLevel);
+        collector = collectorsFactory.create(collectorTypeEnum, handler, address, maxRecursionLevel);
         collector.start();
     }
 

@@ -2,7 +2,9 @@ package stdBot;
 
 import javafx.util.Pair;
 
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 public class SiteMap {
@@ -31,6 +33,28 @@ public class SiteMap {
             stringBuilder.append("<li><a href=\""+relation.getKey() +"\">"+relation.getKey() +"</a> --> <a href=\""+relation.getValue()+"\">"+relation.getValue()+"</a></li>");
 
         return stringBuilder.toString();
+
+    }
+
+    public void printInternalLinksNumber() {
+        System.out.println("Total number of internal links is: " + knownInternalLinks.size());
+    }
+
+    public void printRelationGraph() {
+        Set<String> keys = new HashSet<>();
+
+        for (Pair<String, String> relation: knownRelations) {
+            keys.add(relation.getKey());
+        }
+
+        for (String key:
+             keys) {
+            System.out.println("\t" + key);
+            printRelationForEveryKey(key);
+        }
+    }
+
+    public void printRelationForEveryKey(String key) {
 
     }
 }

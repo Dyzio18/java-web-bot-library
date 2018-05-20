@@ -10,8 +10,8 @@ public class RemoteSiteMap implements CollectableRemotely {
     private Queue<String> currentLinks = new ArrayDeque<>();
     private Queue<String> nextLinks = new ArrayDeque<>();
     private SiteMap siteMap = new SiteMap();
-    private int currentRecurtionLevel = 0;
-    private int maxRecurtionLevel = 0;
+    private int currentRecursionLevel = 0;
+    private int maxRecursionLevel = 0;
     private Pattern pattern = Pattern.compile("href=\".*?\"");
     private String domain;
 
@@ -64,12 +64,12 @@ public class RemoteSiteMap implements CollectableRemotely {
 
     @Override
     public boolean hasFinished() {
-        return currentRecurtionLevel > maxRecurtionLevel || (currentLinks.isEmpty() && nextLinks.isEmpty());
+        return currentRecursionLevel > maxRecursionLevel || (currentLinks.isEmpty() && nextLinks.isEmpty());
     }
 
     @Override
     public void setMaxRecursionLevel(int level) {
-        maxRecurtionLevel = level;
+        maxRecursionLevel = level;
     }
 
     private void enterSite(RemoteHandler handler, String address){
@@ -80,7 +80,7 @@ public class RemoteSiteMap implements CollectableRemotely {
         if (currentLinks.isEmpty()){
             currentLinks = nextLinks;
             nextLinks = new ArrayDeque<>();
-            currentRecurtionLevel++;
+            currentRecursionLevel++;
         }
         return currentLinks.poll();
     }

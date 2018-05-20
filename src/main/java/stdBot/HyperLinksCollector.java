@@ -2,8 +2,8 @@ package stdBot;
 
 public class HyperLinksCollector extends RemoteCollector {
 
-    public HyperLinksCollector(RemoteHandler handler, String address, int maxRecurtionLevel) {
-        super(handler, address, maxRecurtionLevel);
+    public HyperLinksCollector(RemoteHandler handler, String address, int maxRecursionLevel) {
+        super(handler, address, maxRecursionLevel);
         collectableRemotely = factory.create(MapTypeEnum.HyperLinksMap);
     }
 }
