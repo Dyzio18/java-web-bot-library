@@ -1,5 +1,6 @@
 package stdBot;
 
+
 public class MapsFactory {
 
     public CollectableRemotely create(MapTypeEnum mapTypeEnum){

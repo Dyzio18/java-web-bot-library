@@ -1,5 +1,8 @@
 package stdBot;
 
+/**
+ * This class call fabric for create hyperlinks
+ */
 public class HyperLinksCollector extends RemoteCollector {
 
     public HyperLinksCollector(RemoteHandler handler, String address, int maxRecursionLevel) {
