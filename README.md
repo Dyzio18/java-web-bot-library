@@ -11,8 +11,10 @@ own website extractor. Which will extract date from websites under assigned url
 and can display them in the form of for e.g complex web-site map (or graph).
 Used algorithms allows to use different web-search depth adequate to user needs. 
 
-## Example of usage with user interface
+## Example of extracted data
 ![Alt text](/img/demo-interface-prezentation.png)
+## Example of usage with user interface
+![Alt text](/img/demo-extracted-data.png)
 
 ###### @authors: 
 ###### Patryk Nizio
