@@ -3,7 +3,7 @@ An experimental, compact, universal Java API which allows
 you to create your own web-bot.
 
 ##### Presentation of technology
-[Presentation](https://patryk-nizio.pl/files/work/projects/java-web-bot-library/prezentacja.pdf)
+[Presentation](https://github.com/Dyzio18/java-web-bot-library/blob/master/PDF-presentation-PL.pdf)
 
 
 ## Getting started
